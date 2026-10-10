@@ -1,0 +1,20 @@
+# Objetivo:
+Realizar un reconocimiento basico con una maquina Kali Linux de una maquina Metasploitable 2 con el fin de identificar puertos abiertos y servicios usando la herramienta Nmap.
+
+# Procedimiento:
+
+Primero, comprobé las direcciones IP de ambas maquinas usando el comando: ip addr dando como resultado las siguintes direcciones:
+
+Kali Linux: 10.10.10.5
+Metasploitable: 10.10.10.6
+
+Seguido comprobé su conectividad usando el comando Ping en cada maquina en dirección a la IP de la maquina contraria:
+
+Kali Linux: ping -c 4 10.10.10.6
+Metasploitable: ping -c 4 10.10.10.5
+
+Después ejecute el siguiente comando desde Kali Linux:
+nmap -sV 10.10.10.6
+El parámetro -sV es un parámetro para identificar los servicios y sus respectivas versiones que detecte el escaneo de Nmap
+
+Los resultados del escaneo pueden verse en la carpeta de resultados.
